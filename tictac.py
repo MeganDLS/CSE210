@@ -1,11 +1,15 @@
 """CSE210 W01: A game of Tic Tac Toe"""
 __author__ = "Megan De Leon"
 
-"""Get usernames"""    
-username = input("Enter P1 username: ")
+
+print("")
+print("\033[3;32;43m Welcome to Tic Tac Toe  \n") 
+
+"""Get usernames"""
+username = input("   Enter P1 Username: ")
 print("Hello, " + username + "! You are X's")
 print (" ")
-username2 = input("Enter P1 username: ")
+username2 = input("   Enter P2 Username: ")
 print("Hello, " + username2 + "! You are O's")
 
 
@@ -60,17 +64,20 @@ def grid():
 #     """Get input from Player 1"""
 #     move1 = input("X's choose a number: ")
 #     if move1 == 1
+
 """Get input from Player 2"""
 print ("O's choose a number: ")
 
 def main():
     grid()
-    answer = input("Would you like to play again? y/n")
+    print("")
+    answer = input("Would you like to play again? y/n ")
     if answer == "y": 
         print("Yes!") #how to start over?
         print("")    
     else:
         print("Good game. Thanks for playing!")
+        print("")
 
 if __name__ =="__main__":
     main()
