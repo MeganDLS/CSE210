@@ -28,56 +28,78 @@ def grid():
     print(row2)
     print (" " + divider)
     print(row3)
-    turn("X")
+#    turn("X")
 
-"""Get input from Player 1"""
+"""Get input from Players"""
 "Move 1"
 def turn(sign):
     print(" ")
     move1 = input(" " + sign + "'s turn to choose a square (1-9): _")
     if move1 == "1":
-        print(" " + sign + "|2|3")
+        global row1 
+        row1 = (" " + sign + "|2|3")
+        print(row1)
         print(row2)
         print(row3)
     elif move1 == "2":
-        print("1|" + sign + "|3")
+        #global row1
+        row1 = ("1|" + sign + "|3")
+        print(row1)
         print(row2)
         print(row3)
     elif move1 == "3":
-        print("1|2|" + sign)
+        #global row1
+        row1 = ("1|2|" + sign)
+        print (row1)
         print(row2)
         print(row3)
     elif move1 == "4":
         print(row1)
-        print(" " + sign + "|5|6")
+        global row2
+        row2 = (" " + sign + "|5|6")
+        print(row2)
         print(row3)
     elif move1 == "5":
         print(row1)
-        print("4|" + sign +"|6")
+        #global row2
+        row2 = ("4|" + sign +"|6")
+        print(row2) 
         print(row3)
     elif move1 == "6":
         print(row1)
-        print("4|5|" + sign)
+        #global row2
+        row2 = ("4|5|" + sign)
+        print(row2)
         print(row3)
     elif move1 == "7":
         print(row1)
         print(row2)
-        print(" " + sign + "|8|9")
+        global row3
+        row3 = (" " + sign + "|8|9")
+        print(row3)
     elif move1 == "8":
         print(row1)
         print(row2)
-        print("7|" + sign + "|9")
+        #global row3
+        row3 = ("7|" + sign + "|9")
+        print(row3)
     elif move1 == "9":
         print(row1)
         print(row2)
-        print("7|8|" + sign)
+        #global row3
+        row3 = ("7|8|" + sign)
+        print(row3)
     
-"""Get input from Player 2"""
-turn("O")
 print("")
 
 def main():
     grid()
+    t = 0
+    while t < 3:
+        turn("X")
+        turn("O")
+        t += 1
+    
     print("")
     answer = input(" Would you like to play again? y/n ")
     if answer == "y": 
