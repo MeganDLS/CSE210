@@ -7,13 +7,7 @@ Megan De Leon
 """WELCOME"""
 print("\n \033[3;32;43m  Welcome to Tic Tac Toe  \n") 
 
-"""USERNAMES"""
-"""Get usernames"""
-def assign_names():
-    pass
-
-
-"""Grid lines defaults"""
+"""GRID"""
 def create_board():
     board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     return board
@@ -28,13 +22,12 @@ def display_board(board):
     """)
 
 def edit_board(board, sign):
-    square = int(input(sign + " turn to choose a square (1-9): "))
+    square = int(input(" " + sign + " turn to choose a square (1-9): "))
     board[square - 1] = sign
     print(board)    
 
-def change_sign(sign):
+def change_player(sign):
     sign = "X" if sign == "O" else "O" 
-    print("Winner, Winner!")
     return sign
 
 def is_game_over(board):
@@ -46,9 +39,9 @@ def is_game_over(board):
     or board[2] == board[5] == board[8]
     or board[0] == board[4] == board[8]
     or board[6] == board[4] == board[2]):
+        print("  \033[1;37;40m Winner, Winner!")
         return True
     return False
-
 
 def main():
     username = input("   Enter P1 Username: ")
@@ -62,7 +55,7 @@ def main():
     while not is_game_over(board):
         display_board(board)
         edit_board(board, sign)
-        sign = change_sign(sign)
+        sign = change_player(sign)
 
     answer = input("\n Would you like to play again? y/n ")
     if answer == "y": 
